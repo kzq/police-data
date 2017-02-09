@@ -31,6 +31,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# Use bower for asset manager
+gem 'bower-rails'
+# Use to generate authenticity tokens for angular requests
+gem 'angular_rails_csrf'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -38,6 +42,14 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  # Rails version of Rspec testing DSL   
+  gem 'rspec-rails'
+  # Provide library of custom machers for Rspec like validations etc.  
+  gem 'shoulda-matchers'
+  # Factories for test data
+  gem 'factory_girl_rails'
+  # Generate realistic but fake data for tests
+  gem 'faker'
 end
 
 group :development do
@@ -47,6 +59,22 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  # Browser interation from within integration tests
+  gem 'capybara'
+  # Cucumber for user friendly integration tests
+  gem 'cucumber-rails', require: false
+  # Headless browser for javascript testing, driver for capybara
+  # First install - npm install phantomjs 
+  gem 'poltergeist'
+  # Can take brower screenshots when running testing
+  gem 'capybara-screenshot', :require => false # takes screenshots when test fails
+  # Make sure each test suits runs on clean slate of database 
+  gem 'database_cleaner'
+  # Stub http requests
+  gem 'webmock'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
