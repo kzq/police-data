@@ -21,5 +21,10 @@ module PoliceData
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    
+    # Dont generate assets with rails g 
+    config.generators.assets = false
+    # Dont generate helpers with rails g
+    config.generators.helper = false
   end
 end
