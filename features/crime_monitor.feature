@@ -3,6 +3,7 @@ Feature: Neighbourhood crime moinitor
   I want to keep eye on my area
   So that I can monitor crimes rates
   
+  @javascript
   Scenario: Search crimes in my postcode
     Given I am on the home page
     When I provide my postcode L7 3ET
