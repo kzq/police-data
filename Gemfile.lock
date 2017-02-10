@@ -40,6 +40,10 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
+    angular-rails-templates (1.0.2)
+      railties (>= 4.2, < 6)
+      sprockets (>= 3.0, < 5)
+      tilt
     angular_rails_csrf (2.0.0)
       railties (>= 3, < 5.1)
     arel (7.1.4)
@@ -234,6 +238,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  angular-rails-templates
   angular_rails_csrf
   bower-rails
   byebug

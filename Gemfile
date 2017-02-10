@@ -35,6 +35,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bower-rails'
 # Use to generate authenticity tokens for angular requests
 gem 'angular_rails_csrf'
+# Adds your HTML templates into Angular's $templateCache using Rails asset pipeline.
+gem 'angular-rails-templates'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

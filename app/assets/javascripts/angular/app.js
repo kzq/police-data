@@ -1,1 +1,1 @@
-var app = angular.module('policeData', ['ngResource']);
+var app = angular.module('policeData', ['ngResource','templates']);
