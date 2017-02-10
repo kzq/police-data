@@ -7,7 +7,7 @@
   </head>
   <body ng-app="policeData">
   <!-- Fixed navbar -->
-    <nav class="navbar navbar-fixed-top">
+    <nav class="navbar navbar-fixed-top"  ng-controller="MenuCtrl">
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">
@@ -16,7 +16,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li ng-class="{'active':isActive('/crimeTypes')}"><a href="#/crimeTypes">Crime Types</a></li>
+            <li ng-class="{'active':isActive('/crime-types')}"><a href="#crime-types">Crime Types</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
