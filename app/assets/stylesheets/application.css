@@ -12,7 +12,6 @@
  *
  *= require_tree .
  *= require bootstrap/dist/css/bootstrap
- *= require search_box
  *= require style  
  *= require_self
  */

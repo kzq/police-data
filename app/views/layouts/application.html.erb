@@ -5,8 +5,22 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all'%>
   </head>
-
   <body>
+  <!-- Fixed navbar -->
+    <nav class="navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <b>Neighbourhood Crime Moinitor</b>
+          </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav" ng-controller="MenuCtrl">
+            <li ng-class="{'active':isActive('/crimeTypes')}"><a href="#/meals">Crime Types</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
     <%= yield %>
     <%= javascript_include_tag 'application'%>
   </body>

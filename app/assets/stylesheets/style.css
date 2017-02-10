@@ -1,4 +1,5 @@
+/* Bootstrap overrides */
 body {
-    margin: 20px;
-    background: #FDF3E7 !important;;
+    padding-top: 50px;
+    background: #FDF3E7 !important;
 }
