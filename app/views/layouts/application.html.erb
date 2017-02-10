@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all'%>
   </head>
-  <body>
+  <body ng-app="policeData">
   <!-- Fixed navbar -->
     <nav class="navbar navbar-fixed-top">
       <div class="container">
@@ -15,8 +15,8 @@
           </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav" ng-controller="MenuCtrl">
-            <li ng-class="{'active':isActive('/crimeTypes')}"><a href="#/meals">Crime Types</a></li>
+          <ul class="nav navbar-nav">
+            <li ng-class="{'active':isActive('/crimeTypes')}"><a href="#/crimeTypes">Crime Types</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
