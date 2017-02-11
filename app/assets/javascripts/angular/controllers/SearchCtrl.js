@@ -1,4 +1,4 @@
-app.controller('SearchCtrl', ['$scope', 'PoliceDataFactory', function($scope, PoliceDataFactory){
+app.controller('SearchCtrl', ['$scope', 'ApiFactory', function($scope, ApiFactory){
   $scope.search = {};
   $scope.lastSearch = {};
   $scope.recentSearches = [];
@@ -9,7 +9,7 @@ app.controller('SearchCtrl', ['$scope', 'PoliceDataFactory', function($scope, Po
   };  
   
   $scope.queryCrime = function(geocoding){
-    $scope.crimes = PoliceDataFactory.query({path: 'crimes-street/all-crime', query: 'lat='+geocoding.lat+'&lng='+geocoding.lng});
+    $scope.crimes = ApiFactory.query({path: 'crimes-rate', query: 'lat='+geocoding.lat+'&lng='+geocoding.lng});
     if (geocoding.error == false){
       $scope.search.total = Object.keys($scope.crimes).length;
     }
