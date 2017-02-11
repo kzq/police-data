@@ -1,7 +1,7 @@
 Feature: Neighbourhood crime moinitor
   As a resident
   I want to keep eye on my area
-  So that I can monitor crimes rates
+  So that I can monitor crime rates
   
   @javascript
   Scenario: Search crimes in my postcode

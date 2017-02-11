@@ -8,5 +8,5 @@ When(/^I provide my postcode (.*)$/) do |post_code|
 end
 
 Then(/^I should see "([^"]*)"$/) do |text_heading|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content(text_heading)
 end
