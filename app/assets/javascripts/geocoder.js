@@ -5,16 +5,19 @@
  */
 function Geocoder(address){
 	this.address = address;
-    
+    result = {};
     this.geocode = function (callback) {
       var geocoder = new google.maps.Geocoder();
       geocoder.geocode({address: this.address}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
-          this.lat = results[0].geometry.location.lat();
-          this.lng = results[0].geometry.location.lng();
-          callback(this.lat,this.lng);
+          result.lat = results[0].geometry.location.lat();
+          result.lng = results[0].geometry.location.lng();
+          result.error = false;
+          callback(result);
         }else { 
-          alert("The Geocode was not successful for the following reason: " + status);
+          result.error = true;
+          result.errorText = "The Geocode was not successful for the following reason: " + status;
+          callback(result);
         }
       });
     };
