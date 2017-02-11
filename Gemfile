@@ -37,7 +37,8 @@ gem 'bower-rails'
 gem 'angular_rails_csrf'
 # Adds your HTML templates into Angular's $templateCache using Rails asset pipeline.
 gem 'angular-rails-templates'
-
+#Use responders to get default return with formats 
+gem 'responders'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
