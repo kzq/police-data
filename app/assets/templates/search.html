@@ -3,9 +3,9 @@
         <div class="col-md-6">
           <div id="custom-search-input">
             <div class="input-group col-md-12">
-              <input type="text" id="searchBox" class="form-control input-lg" ng-model="search.text" placeholder="Enter Postcode" required/>
+              <input type="text" id="searchBox" class="form-control input-lg" ng-model="search.postcode" placeholder="Enter Postcode" required/>
                 <span class="input-group-btn">
-                  <button class="btn btn-info btn-lg" id="btnSearch" ng-click="performSearch()" ng-disabled="!search.text" type="button">
+                  <button class="btn btn-info btn-lg" id="btnSearch" ng-click="performSearch()" ng-disabled="!(!!search.postcode)" type="button">
                     <i class="glyphicon glyphicon-search"></i>
                   </button>
                 </span>
@@ -13,4 +13,13 @@
           </div>
         </div>
   </div>
+  <div class="row"></div>
+  <div class="row">
+  	<div class="col-md-6">
+      <div class="alert  alert-danger" ng-show="search.error">
+      	<strong>Looks like you have entered an invalid postcode</strong><br>
+        <p>{{search.error}}</p>
+      </div>
+    </div>
+  </div>  
 </div>
