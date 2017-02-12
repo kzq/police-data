@@ -1,25 +1,31 @@
 app.controller('SearchCtrl', ['$scope', 'ApiFactory', function($scope, ApiFactory){
-  $scope.search = {};
-  $scope.lastSearch = {};
-  $scope.recentSearches = [];
+  $scope.searches = [];
    
   $scope.performSearch = function() {
-  	var geocoder = new Geocoder($scope.search.postcode);
+  	var geocoder = new Geocoder($scope.postcode);
     geocoder.geocode($scope.queryCrime);
   };  
   
   $scope.queryCrime = function(geocoding){
-    $scope.crimes = ApiFactory.query({path: 'crimes-rate', query: 'lat='+geocoding.lat+'&lng='+geocoding.lng});
     if (geocoding.error == false){
-      $scope.search.total = Object.keys($scope.crimes).length;
+      $scope.response = ApiFactory.query({path: 'crimes-rate', query: 'lat='+geocoding.lat+'&lng='+geocoding.lng},
+       function(crimes){
+          crimes_data = crimes[0]; 
+          $scope.total= crimes_data.total;
+          $scope.statistics = crimes_data.statistics;
+          addSearch();	
+        });
     }
     else if (geocoding.error == true){
-      $scope.search.error = geocoding.errorText;
-      $scope.search.total = '?';
+      $scope.error = geocoding.errorText;
+      $scope.total = '?';
+      addSearch();
     }   
-    $scope.recentSearches.push($scope.search);
-    $scope.lastSearch = $scope.search;
-    $scope.search = {};
   };
- 
+  
+  function addSearch(){
+   $scope.searches.push({postcode: $scope.postcode, total: $scope.total});
+   $scope.postcode='';$scope.error='';
+  }
+  
 }]);
