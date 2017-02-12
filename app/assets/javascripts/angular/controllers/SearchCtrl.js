@@ -13,7 +13,8 @@ app.controller('SearchCtrl', ['$scope', 'ApiFactory', function($scope, ApiFactor
           crimes_data = crimes[0]; 
           $scope.total= crimes_data.total;
           $scope.statistics = crimes_data.statistics;
-          addSearch();	
+          addSearch();
+          $scope.postcode='';	
         });
     }
     else if (geocoding.error == true){
@@ -25,7 +26,6 @@ app.controller('SearchCtrl', ['$scope', 'ApiFactory', function($scope, ApiFactor
   
   function addSearch(){
    $scope.searches.push({postcode: $scope.postcode, total: $scope.total});
-   $scope.postcode='';$scope.error='';
   }
   
 }]);
