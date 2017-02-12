@@ -21,6 +21,7 @@ require 'shoulda-matchers'
 require 'factory_girl_rails'
 require 'database_cleaner'
 require 'webmock/rspec'
+require 'police_data_api'
 
 DatabaseCleaner.strategy = :deletion
 

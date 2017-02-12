@@ -1,8 +1,10 @@
 class Api::CrimesController < ApplicationController
+  require 'police_data_api'
   respond_to :json
   
   def index
     response = RestClient.get 'https://data.police.uk/api//crimes-street/all-crime', {:params =>{lat: params[:lat], lng: params[:lng]}}
+    response = PoliceDataApi.street_level_crimes(lat: params[:lat], lng: params[:lng]);  
     crimes = response.body 
     crimes_hash=JSON.parse(crimes)
     # manipulate hash data
