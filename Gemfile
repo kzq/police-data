@@ -49,6 +49,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
   # Rails version of Rspec testing DSL   
   gem 'rspec-rails'
+  # Use rspec-its for subject attributes
+  gem 'rspec-its'
   # Provide library of custom machers for Rspec like validations etc.  
   gem 'shoulda-matchers'
   # Factories for test data
