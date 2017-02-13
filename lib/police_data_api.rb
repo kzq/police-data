@@ -1,5 +1,3 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__))
-
 require 'forwardable'
 require 'police_data_api/service'
 
@@ -12,7 +10,7 @@ module PoliceDataApi
     def_delegators :service , :street_level_crimes
     
     def service
-      @service ||= PoliceDataApi::Service.new
+      @service ||= Service.new
     end
     
   end 

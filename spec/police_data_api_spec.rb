@@ -1,12 +1,10 @@
 describe PoliceDataApi do
-  before do
-    ApiService.url = nil
-  end
+  let(:service) { double :service }
   
-  describe "#url" do
-    it "sets the api base url" do
-      ApiService.url = 'https://data.police.uk/api/'
-      expect(ApiService.url).to eq('https://data.police.uk/api/')
+  describe "#service" do
+    it "returns service" do
+      expect(PoliceDataApi::Service).to receive(:new).and_return(service)
+      expect(PoliceDataApi.service).to eq(service)
     end
   end
 end
