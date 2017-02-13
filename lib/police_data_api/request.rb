@@ -18,13 +18,13 @@ module PoliceDataApi
       when 200, 202
         return
       when 400
-        raise Error, "Bad request: #{body}"
+        raise GeneralError, "Bad request: #{body}"
       when 401
-        raise AuthenticationError, body
+        raise GeneralError, body
       when 404
-        raise Error, "404 Not found"
+        raise GeneralError, "404 Not found"
       else
-        raise Error, "Unknown error (status code #{code}): #{body}"
+        raise GeneralError, "Unknown error (status code #{code}): #{body}"
       end
     end
   end
