@@ -2,7 +2,7 @@ require 'forwardable'
 require 'police_data_api/service'
 
 module PoliceDataApi
-  class Error < RuntimeError; end
+  class GeneralError < StandardError; end
   
   class << self
     extend Forwardable
