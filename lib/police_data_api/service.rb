@@ -8,12 +8,11 @@ require 'police_data_api/response'
 module PoliceDataApi
   class Service
     def street_level_crimes(options)
-      raise ArgumentError, 'Street Level Crimes service expect a hash' unless options.is_a?(Hash)
-      raise PoliceDataApi::GeneralError, 'Please provide latitude' if options[:lat].nil?
-      raise PoliceDataApi::GeneralError, 'Please provide longitude' if options[:lng].nil?
-      values, resource = {lat: options[:lat], lng: options[:lng]}, Resource.new("crimes-street/all-crime") 
+      param_manager = options[:param_manager]
+      param_manager.validate([:lat, :lng])
+      values, resource = param_manager.params, Resource.new(options[:path]) 
       request = Request.new(10)
       response = Response.new(request.send(resource,values))
     end
-  end  
+  end
 end

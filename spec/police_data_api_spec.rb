@@ -1,10 +1,14 @@
 describe PoliceDataApi do
-  let(:service) { double :service }
+  let(:options) { { lat: 123, lng: 456 } }
   
-  describe "#service" do
-    it "returns service" do
-      expect(PoliceDataApi::Service).to receive(:new).and_return(service)
-      expect(PoliceDataApi.service).to eq(service)
+  describe "#street_level_crimes" do
+    it "returns data with street level crimes" do
+      service_path = "crimes-street/all-crime"
+      param_manager = double("ParamManager", validate: [])
+      service = double("Service", new: service)
+      allow(service).to receive(:street_level_crimes).with(param_manager: param_manager, path: service_path).and_return('data')
+      data = service.street_level_crimes(param_manager: param_manager, path: service_path)
+      expect(data).to eq('data')
     end
   end
 end
