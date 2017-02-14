@@ -1,24 +1,30 @@
-# README
+# Neighbourhood Crime Monitor
+------
+Neighbourhood Crime Monitor uses https://data.police.uk/docs/ api to display crimes rates in the given area. Application uses Rails at back end and AngiularJS as front end.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Installation** 
+===
 
-Things you may want to cover:
+**Bower Setup**
 
-* Ruby version
+First install Node.js if you don't have already.
 
-* System dependencies
+**Install Bower**
 
-* Configuration
+```node
+  npm install -g bower
+```
 
-* Database creation
+**Rails Setup**
 
-* Database initialization
+```rails
+  bundle install
+  
+  bundle exec rake bower:install 
+```
 
-* How to run the test suite
+**Run Server**
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```rails
+  rails server -e development -p 3000  -P tmp/pids/3000.pid
+```
