@@ -3,7 +3,7 @@ module PoliceDataApi
     attr_accessor :params
     
     def initialize(options) 
-      # only accepts list of params in hasg format
+      # only accepts list of params in hash format
       @params = options
       is_hash?
     end
